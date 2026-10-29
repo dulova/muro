@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5dcd5" />
+  <meta name="description" content="Муроблоки — уютная головоломка 10×10 с котиком. Без рекламы, спешки и регистрации." />
+  <link rel="icon" type="image/png" href="./assets/icon-192.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Муроблоки — уютная головоломка</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true">🐱</span><div><h1>Муроблоки<span class="title-dot">.</span></h1><p>Никуда не торопись ♡</p></div></div>
+      <button id="help-btn" class="icon-btn" type="button" aria-label="Как играть" title="Как играть">?</button>
+    </header>
+
+    <section class="stats" aria-label="Статистика игры">
+      <div class="stat"><span class="stat-label">ОЧКИ</span><strong id="score" aria-live="polite">0</strong></div>
+      <div class="stat"><span class="stat-label">РЕКОРД</span><strong id="best">0</strong></div>
+      <div class="stat stat-star"><span class="stat-label">ЗВЁЗДЫ</span><strong><span aria-hidden="true">★</span> <span id="stars">0</span></strong></div>
+    </section>
+
+    <div class="game-area">
+      <div class="board-shell">
+        <div class="board-deco"><span class="deco-cat" aria-hidden="true">ᓚᘏᗢ</span><span id="status" aria-live="polite">Выбери фигурку снизу</span></div>
+        <div id="board" class="board" role="grid" aria-label="Игровое поле десять на десять клеток"></div>
+      </div>
+
+      <section class="piece-area" aria-label="Доступные фигурки">
+        <div class="tray-heading"><span>ТВОИ ФИГУРКИ</span><span id="remaining-label">Три штучки!</span></div>
+        <div id="tray" class="tray"></div>
+      </section>
+
+      <div class="actions"><button id="restart" class="secondary-btn" type="button"><span aria-hidden="true">↻</span> Новая игра</button><span class="tiny-hint">Перетаскивай фигурки или выбирай и нажимай на поле</span></div>
+    </div>
+
+    <footer>С любовью к спокойным головоломкам ✦ Никакой рекламы.</footer>
+  </main>
+
+  <dialog id="help-modal" class="modal"><div class="modal-content"><span class="modal-emoji" aria-hidden="true">🐾</span><h2>Как играть?</h2><p>Размещай фигурки на поле 10×10. Заполняй горизонтальные строки и вертикальные столбцы, чтобы они исчезали и приносили очки.</p><p>Когда разместишь все три фигурки, появятся новые. Игра продолжается, пока не останется места ни для одной доступной фигурки.</p><p>На телефоне можно перетаскивать фигурку пальцем или выбрать её, а затем нажать на поле. Прогресс сохраняется на этом устройстве автоматически.</p><button class="primary-btn close-modal" type="button">Понятно, мур!</button></div></dialog>
+
+  <dialog id="gameover-modal" class="modal"><div class="modal-content"><span class="modal-emoji" aria-hidden="true">😽</span><h2>Котик устал!</h2><p>Место на поле закончилось. Но какая славная партия!</p><div class="final-score"><span>Твои очки</span><strong id="final-score">0</strong></div><button id="play-again" class="primary-btn" type="button">Играть ещё ♡</button></div></dialog>
+
+  <dialog id="restart-modal" class="modal"><div class="modal-content"><span class="modal-emoji" aria-hidden="true">🐈</span><h2>Начать сначала?</h2><p>Текущая партия закончится, а личный рекорд сохранится.</p><div class="dialog-actions"><button class="secondary-btn close-modal" type="button">Продолжить</button><button id="confirm-restart" class="primary-btn" type="button">Начать заново</button></div></div></dialog>
+
+  <div id="drag-ghost" class="drag-ghost" aria-hidden="true"></div>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

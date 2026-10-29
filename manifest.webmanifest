@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Муроблоки — уютная головоломка",
+  "short_name": "Муроблоки",
+  "description": "Уютная игра 10×10. Без рекламы и спешки.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f9eeeb",
+  "theme_color": "#f5dcd5",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
